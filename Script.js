@@ -7,6 +7,25 @@ function abrirCartinha(elemento) {
   }
 }
 
+// Criar confetes
+  function criarConfetes() {
+  const emojis = ['💙', '💜']; // Emojis de confete
+  for (let i = 0; i < 30; i++) {
+    setTimeout(() => {
+      const confetti = document.createElement('div');
+      confetti.className = 'confetti';
+      confetti.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+      confetti.style.left = Math.random() * 100 + 'vw';
+      confetti.style.top = '-20px';
+      confetti.style.position = 'fixed';
+      confetti.style.fontSize = Math.random() * 20 + 16 + 'px';
+      confetti.style.animation = 'cairConfete 3s ease-out forwards';
+      document.body.appendChild(confetti);
+      setTimeout(() => confetti.remove(), 3000);
+    }, i * 50);
+  }
+}
+
 document.addEventListener('DOMContentLoaded', function() {
   // Mostrar/ocultar poesias
   document.querySelectorAll('.toggle-poesia').forEach(toggle => {
@@ -54,27 +73,5 @@ setInterval(() => {
     criarCoracao();
   }
 }, 100);
-
-
-  // Criar confetes
-  function criarConfetes() {
-  const emojis = ['💙', '💜']; // Emojis de confete
-  for (let i = 0; i < 30; i++) {
-    setTimeout(() => {
-      const confetti = document.createElement('div');
-      confetti.className = 'confetti';
-      confetti.textContent = emojis[Math.floor(Math.random() * emojis.length)];
-      confetti.style.left = Math.random() * 100 + 'vw';
-      confetti.style.top = '-20px';
-      confetti.style.position = 'fixed';
-      confetti.style.fontSize = Math.random() * 20 + 16 + 'px';
-      confetti.style.animation = 'cairConfete 3s ease-out forwards';
-      document.body.appendChild(confetti);
-      setTimeout(() => confetti.remove(), 3000);
-    }, i * 50);
-  }
-}
-
-
 
 });
