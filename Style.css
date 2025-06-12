@@ -138,29 +138,31 @@ h1::after {
 }
 
 .textinho {
-  background: #f0f4ff;
-  color: #2a2a2a;
+  background: rgba(41, 37, 255, 0.08); /* azul claro suave */
+  border-left: 4px solid #2925ff;
   padding: 20px 25px;
-  border-radius: 12px;
-  border-left: 5px solid #2925ff;
-  max-width: 600px;
   margin: 0 auto 60px;
+  max-width: 600px;
+  border-radius: 10px;
+  font-size: 1rem;
+  color: #e2e2ff;
   font-style: italic;
   line-height: 1.6;
-  font-size: 1rem;
-  box-shadow: 0 0 10px rgba(41, 37, 255, 0.1);
+  box-shadow: 0 0 12px rgba(41, 37, 255, 0.1);
   position: relative;
+  z-index: 1;
+  backdrop-filter: blur(2px);
 }
 
 .textinho::before {
-  content: "💙";
+  content: "🧸";
   position: absolute;
+  top: -10px;
+  left: 15px;
   font-size: 1.2rem;
-  top: 12px;
-  right: 20px;
-  animation: textinhoCora 3s infinite ease-in-out;
   opacity: 0.8;
 }
+
 
 @keyframes textinhoCora {
   0%, 100% { transform: translateY(0); opacity: 0.8; }
