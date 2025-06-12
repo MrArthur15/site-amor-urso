@@ -26,6 +26,7 @@ function abrirCartinha(elemento) {
   }
 }
 
+
 document.addEventListener('DOMContentLoaded', function() {
   // Mostrar/ocultar poesias
   document.querySelectorAll('.toggle-poesia').forEach(toggle => {
@@ -58,7 +59,7 @@ botoes.forEach(btn => {
   // Escolhe o coração com chance maior para azul
   coracao.innerHTML = coracoes[Math.floor(Math.random() * coracoes.length)];
 
-  coracao.style.left = Math.random() * 100 + "vw";
+  coracao.style.left = Math.random() * 250 + "vw";
   coracao.style.animationDuration = (Math.random() * 5 + 3) + "s";
   coracao.style.animationDelay = "0s";
   coracao.style.fontSize = Math.random() * 20 + 20 + "px";
@@ -73,5 +74,6 @@ setInterval(() => {
     criarCoracao();
   }
 }, 100);
+
 
 });
