@@ -10,7 +10,7 @@ function abrirCartinha(elemento) {
 // Criar confetes
   function criarConfetes() {
   const emojis = ['•', '✦', '✧', '✨']; // Emojis de confete
-  for (let i = 0; i < 30; i++) {
+  for (let i = 0; i < 50; i++) {
     setTimeout(() => {
       const confetti = document.createElement('div');
       confetti.className = 'confetti';
