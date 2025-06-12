@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Teste!</title>
+  <link rel="stylesheet" href="Style.css">
+  <style>
+    
+    
+  </style>
+</head>
+<body>
+  <h1>💙 Para o URSO da minha vida 💙</h1>
+
+  <div class="gallery">
+    <div class="polaroid">
+      <img src="foto1.jpg" alt="Foto 1">
+      <p>Bear & twink</p>
+      <div class="toggle-poesia"><span class="seta">⬇️</span></div>
+      <div class="poesia">
+        <p>
+          Um grandão com jeito doce,<br>
+          Um pequeno que te enlaça.<br>
+          Entre abraços e risadas,<br>
+          Nosso amor ganhou sua graça.
+        </p>
+      </div>
+    </div>
+
+    <div class="polaroid">
+      <img src="foto2.jpeg" alt="Foto 2">
+      <p>Teu abraço é meu porto seguro</p>
+      <div class="toggle-poesia"><span class="seta">⬇️</span></div>
+      <div class="poesia">
+        <p>
+          No teu peito encontro abrigo,<br>
+          No teu toque, o meu sossego.<br>
+          Cada dia ao teu lado,<br>
+          É mais forte o que carrego.
+        </p>
+      </div>
+    </div>
+
+    <div class="polaroid">
+      <img src="foto3.jpg" alt="Foto 3">
+      <p>Meu grandão favorito 🐻💙</p>
+      <div class="toggle-poesia"><span class="seta">⬇️</span></div>
+      <div class="poesia">
+        <p>
+          Tão forte por fora, tão doce por dentro,<br>
+          Meu ursinho, meu alento.<br>
+          És abrigo, és calor,<br>
+          Meu grandão, meu amor.
+        </p>  
+      </div>
+    </div>
+
+    <div class="polaroid">
+      <img src="foto4.jpg" alt="Foto 4">
+      <p>Nosso momento eterno</p>
+      <div class="toggle-poesia"><span class="seta">⬇️</span></div>
+      <div class="poesia">
+        <p>
+          Te quero em todos meus planos,<br>
+          Nos domingos e invernos também.<br>
+          Você é meu lar, meu caminho,<br>
+          O pra sempre que eu sempre quis bem.
+        </p>
+      </div>
+    </div>
+
+    <div class="polaroid">
+      <img src="foto5.jpg" alt="Foto 5">
+      <p>Nosso futuro</p>
+      <div class="toggle-poesia"><span class="seta">⬇️</span></div>
+      <div class="poesia">
+        <p>
+          Te quero em todos meus planos,<br>
+          Nos domingos e invernos também.<br>
+          Você é meu lar, meu caminho,<br>
+          O pra sempre que eu sempre quis bem.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="textinho">
+  <p>
+    Somos dois jeitos diferentes que se encaixaram de forma perfeita.<br>
+    Um grandão calmo, um pequeno bravo — e um amor gigante entre nós.<br><br>
+    Você é minha paz e meu caos ao mesmo tempo. Meu colo, minha vontade de sorrir.<br>
+    Esse site é só um pedacinho da imensidão do que sinto por você. 💙
+  </p>
+</div>
+
+
+  <div class="cartinha-container" onclick="abrirCartinha(this)">
+  <h2>💌 De nós, para nós 💌</h2>
+  <div class="cartinha-mensagem">
+    <p>
+      Se um dia perguntarem o que é o amor...<br>
+      Vou lembrar do teu jeito calmo acalmando meu bravo.<br><br>
+      Vou lembrar dos teus abraços, da nossa bagunça bonita,<br>
+      do riso fácil, do toque certo, do carinho bobo que só a gente entende.<br><br>
+      Somos o par improvável que deu certo. O casal que se encontra no meio do caos.<br>
+      E eu quero isso pra sempre: nós dois, nosso mundo, nosso jeito. 💙🐻
+    </p>
+  </div>
+</div>
+
+
+ 
+  <script>
+    const botoes = document.querySelectorAll('.toggle-poesia');
+    botoes.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const poesia = btn.nextElementSibling;
+        poesia.classList.toggle('show');
+        btn.querySelector('.seta').textContent = poesia.classList.contains('show') ? '⬆️' : '⬇️';
+      });
+    });
+  </script>
+   <script src="Script.js"></script>
+</body>
+</html>

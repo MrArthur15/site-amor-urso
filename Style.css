@@ -1,0 +1,385 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #222;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-family: 'Arial', sans-serif;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  color: #2925ff;
+  margin-bottom: 30px;
+  font-size: 2rem;
+  position: relative;
+  animation: amorFofo 3s infinite ease-in-out;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Animação suave de batida */
+@keyframes amorFofo {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03);
+  }
+}
+
+/* Corações fofos ao redor do título */
+h1::before,
+h1::after {
+  content: "💙";
+  position: absolute;
+  font-size: 1.4rem;
+  opacity: 0.8;
+  animation: flutuarCoracaoH1 4s infinite ease-in-out;
+}
+
+h1::before {
+  left: -30px;
+  top: -10px;
+  animation-delay: 0s;
+}
+
+h1::after {
+  right: -30px;
+  top: -10px;
+  animation-delay: 2s;
+}
+
+/* Corações flutuando suavemente */
+@keyframes flutuarCoracaoH1 {
+  0% {
+    transform: translateY(0);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-10px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 0.8;
+  }
+}
+
+
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.polaroid {
+  background: white;
+  padding: 15px 15px 30px;
+  width: 280px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  position: relative;
+  transform: rotate(-5deg);
+  transition: transform 0.3s;
+  color: #333;
+}
+
+.polaroid:nth-child(even) {
+  transform: rotate(3deg);
+}
+
+.polaroid:hover {
+  transform: rotate(0) scale(1.05);
+}
+
+.polaroid img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.polaroid p {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.toggle-poesia {
+  cursor: pointer;
+  color: #1900ff;
+  margin-bottom: 5px;
+}
+
+.poesia {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+  font-style: italic;
+  color: #555;
+}
+
+.poesia.show {
+  max-height: 200px;
+}
+
+.textinho {
+  background: #f0f4ff;
+  color: #2a2a2a;
+  padding: 20px 25px;
+  border-radius: 12px;
+  border-left: 5px solid #2925ff;
+  max-width: 600px;
+  margin: 0 auto 60px;
+  font-style: italic;
+  line-height: 1.6;
+  font-size: 1rem;
+  box-shadow: 0 0 10px rgba(41, 37, 255, 0.1);
+  position: relative;
+}
+
+.textinho::before {
+  content: "💙";
+  position: absolute;
+  font-size: 1.2rem;
+  top: 12px;
+  right: 20px;
+  animation: textinhoCora 3s infinite ease-in-out;
+  opacity: 0.8;
+}
+
+@keyframes textinhoCora {
+  0%, 100% { transform: translateY(0); opacity: 0.8; }
+  50% { transform: translateY(-6px); opacity: 1; }
+}
+
+.cartinha-container {
+  background: linear-gradient(135deg, #e6ecff, #f9faff);
+  border: 2px solid #2925ff;
+  color: #2d2d2d;
+  padding: 30px;
+  border-radius: 18px;
+  max-width: 600px;
+  margin-bottom: 80px;
+  box-shadow: 0 0 20px rgba(41, 37, 255, 0.15);
+  position: relative;
+  transition: transform 0.4s ease;
+  cursor: pointer;
+  overflow: hidden;
+  animation: cartinhaBalanço 6s ease-in-out infinite;
+}
+
+.cartinha-container:hover {
+  transform: scale(1.015);
+}
+
+.cartinha-container h2 {
+  font-size: 1.5rem;
+  color: #2925ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.cartinha-container::before,
+.cartinha-container::after {
+  content: "💙";
+  position: absolute;
+  font-size: 1.4rem;
+  opacity: 0.7;
+  animation: cartinhaCoracao 5s infinite ease-in-out;
+}
+
+.cartinha-container::before {
+  top: -10px;
+  left: 20px;
+}
+
+.cartinha-container::after {
+  bottom: -10px;
+  right: 20px;
+  animation-delay: 2s;
+}
+
+@keyframes cartinhaBalanço {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(0.3deg); }
+}
+
+@keyframes cartinhaCoracao {
+  0% { transform: translateY(0); opacity: 0.7; }
+  50% { transform: translateY(-10px); opacity: 1; }
+  100% { transform: translateY(0); opacity: 0.7; }
+}
+
+.cartinha-mensagem {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.7s ease, opacity 0.7s ease;
+  font-style: italic;
+  line-height: 1.6;
+  font-size: 1rem;
+  color: #333;
+  margin-top: 10px;
+}
+
+.cartinha-container.aberta .cartinha-mensagem {
+  max-height: 800px;
+  opacity: 1;
+}
+
+
+
+@keyframes subir {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.cora {
+  position: fixed;
+  bottom: -50px;
+  animation-name: subir;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.cartinha-container {
+  background: #fff4fc;
+  color: #3a2d4f;
+  padding: 25px;
+  border-radius: 20px;
+  max-width: 600px;
+  box-shadow: 0 0 30px rgba(255, 0, 120, 0.2);
+  margin-bottom: 60px;
+  transition: all 0.4s ease;
+  cursor: pointer;
+  position: relative;
+  border: 2px dashed #ff7edb;
+  overflow: hidden;
+  animation: abrirCartinha 1.2s ease;
+}
+
+.cartinha-container:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 40px rgba(255, 0, 120, 0.3);
+}
+
+.cartinha-container h2 {
+  font-size: 1.5rem;
+  color: #c50083;
+  animation: pulseFofo 1.5s infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.cartinha-mensagem {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.6s ease, opacity 0.6s ease;
+  font-style: italic;
+  font-size: 1rem;
+  margin-top: 10px;
+  color: #444;
+}
+
+.cartinha-container.aberta .cartinha-mensagem {
+  max-height: 500px;
+  opacity: 1;
+}
+
+/* Corações especiais flutuando na cartinha */
+.cartinha-container::before,
+.cartinha-container::after {
+  content: "💗";
+  position: absolute;
+  animation: flutuarCoracao 4s infinite ease-in-out;
+  font-size: 1.2rem;
+  opacity: 0.8;
+}
+
+.cartinha-container::before {
+  top: -10px;
+  left: 20px;
+}
+
+.cartinha-container::after {
+  bottom: -10px;
+  right: 20px;
+}
+
+@keyframes abrirCartinha {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes pulseFofo {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes flutuarCoracao {
+  0% {
+    transform: translateY(0);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-10px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 0.8;
+  }
+}
+
+@keyframes cairConfete {
+  to {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.confetti {
+  pointer-events: none;
+  z-index: 1000;
+}
